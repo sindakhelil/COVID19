@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">COVID19</string>
+    <string name="message">Open your menu Please</string>
+    <string name="nav_header_desc">Navigation Header</string>
+    <string name="nav_header_title">Covid19.com</string>
+    <string name="nav_header_subtitle">Application COVID</string>
     <string name="login">log in</string>
     <string name="nav_c">Connection</string>
     <string name="nav_f">Favorite</string>

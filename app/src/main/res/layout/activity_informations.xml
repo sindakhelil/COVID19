@@ -82,7 +82,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/cov"
+        android:src="@drawable/test"
         android:layout_gravity="center"
         android:contentDescription="@string/desc_monimage" />
 

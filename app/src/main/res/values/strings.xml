@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">COVID19</string>
+    <string name="message">Sil vous plait ouvrir votre menu</string>
+    <string name="nav_header_desc">Entête de Navigation</string>
+    <string name="nav_header_title">Covid19.com</string>
+    <string name="nav_header_subtitle">Application COVID</string>
     <string name="login"> Se connecter</string>
     <string name="nav_c">Connexion</string>
     <string name="nav_f">Favoris</string>
