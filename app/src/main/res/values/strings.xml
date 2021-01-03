@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">COVID19</string>
     <string name="message">Sil vous plait ouvrir votre menu</string>
+    <string name="nomp">com.dsi32.COVID19.nomp</string>
+    <string name="pas">com.dsi32.COVID19.pas</string>
+    <string name="checkboxLog">com.dsi32.COVID19.checkboxLog</string>
     <string name="nav_header_desc">Entête de Navigation</string>
     <string name="nav_header_title">Covid19.com</string>
     <string name="nav_header_subtitle">Application COVID</string>

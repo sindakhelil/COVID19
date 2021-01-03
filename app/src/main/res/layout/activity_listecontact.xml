@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="4"
-    >
+    android:weightSum="4">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -32,7 +29,7 @@
             android:src="@drawable/ic_baseline_arrow_back_24"
             android:contentDescription="@string/desc_flechelisteinfo" />
     </FrameLayout>
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
