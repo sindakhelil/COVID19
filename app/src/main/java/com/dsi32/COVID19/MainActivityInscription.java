@@ -62,26 +62,23 @@ public class MainActivityInscription extends AppCompatActivity {
     //method add user dans la base
     public void addUser(String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        String TAG = "addclient";
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            //FirebaseUser user = mAuth.getCurrentUser();
-                            //updateUI(user);
-                            goToMain();
+                .addOnCompleteListener(this, task -> {
+                    String TAG = "addclient";
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "createUserWithEmail:success");
+                        //FirebaseUser user = mAuth.getCurrentUser();
+                        //updateUI(user);
+                        goToMain();
 
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivityInscription.this, "failed to add", Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
-                        }
-
-                        // ...
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                        Toast.makeText(MainActivityInscription.this, "failed to add", Toast.LENGTH_SHORT).show();
+                        //updateUI(null);
                     }
+
+                    // ...
                 });
     }
 
