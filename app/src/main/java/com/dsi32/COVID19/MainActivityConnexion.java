@@ -38,22 +38,19 @@ public class MainActivityConnexion extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        findViewById(R.id.id2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditText loginView = findViewById(R.id.mal);
-                EditText motPassView = findViewById(R.id.pswd);
+        findViewById(R.id.id2).setOnClickListener(view -> {
+            EditText loginView = findViewById(R.id.mal);
+            EditText motPassView = findViewById(R.id.pswd);
 
-                String login = loginView.getText().toString();
-                String password = motPassView.getText().toString();
-                //
-                if (login.length() > 6 && password.length() > 8) {
+            String login = loginView.getText().toString();
+            String password = motPassView.getText().toString();
+            //
+            if (login.length() > 6 && password.length() > 8) {
 
-                    //Toast.makeText(Login.this, login+" "+password, Toast.LENGTH_LONG).show();
-                    login(login, password);
-                } else {
-                    Toast.makeText(MainActivityConnexion.this, "Enter a valid login", Toast.LENGTH_SHORT).show();
-                }
+                //Toast.makeText(Login.this, login+" "+password, Toast.LENGTH_LONG).show();
+                login(login, password);
+            } else {
+                Toast.makeText(MainActivityConnexion.this, "Enter a valid login", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -72,27 +69,24 @@ public class MainActivityConnexion extends AppCompatActivity {
 
         public void login(String email, String password) {
             mAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            String TAG = "singin";
-                            if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Log.d(TAG, "signInWithEmail:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                //Toast.makeText(Login.this, "ok", Toast.LENGTH_SHORT).show();
-                                //updateUI(user);
-                                goToMain();
-                            } else {
-                                // If sign in fails, display a message to the user.
-                                Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                Toast.makeText(MainActivityConnexion.this, "Authentication failed.",
-                                        Toast.LENGTH_LONG).show();
-                                //updateUI(null);
-                            }
-
-                            // ...
+                    .addOnCompleteListener(this, task -> {
+                        String TAG = "singin";
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            //Toast.makeText(Login.this, "ok", Toast.LENGTH_SHORT).show();
+                            //updateUI(user);
+                            goToMain();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(MainActivityConnexion.this, "Authentication failed.",
+                                    Toast.LENGTH_LONG).show();
+                            //updateUI(null);
                         }
+
+                        // ...
                     });
         }
     private void goToMain() {

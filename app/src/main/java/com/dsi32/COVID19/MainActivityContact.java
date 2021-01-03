@@ -17,7 +17,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivityContact extends AppCompatActivity {
     ImageView IM;
-    Button annuler;
     Button enrigistrer;
     EditText userName;
     EditText userAdress;
@@ -42,22 +41,16 @@ public class MainActivityContact extends AppCompatActivity {
         numbOfTimes = findViewById(R.id.numbOfTimes);
         contactDate = findViewById(R.id.datePicker1);
 
-        IM.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivityContact.this,MainActivity.class);
-                startActivity(intent);
-            }
+        IM.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivityContact.this,MainActivity.class);
+            startActivity(intent);
         });
         //adding an onclicklistener to button
-        enrigistrer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //calling the method addArtist()
-                //the method is defined below
-                //this method is actually performing the write operation
-                addContact();
-            }
+        enrigistrer.setOnClickListener(view -> {
+            //calling the method addArtist()
+            //the method is defined below
+            //this method is actually performing the write operation
+            addContact();
         });
 
     }

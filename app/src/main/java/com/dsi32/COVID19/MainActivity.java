@@ -3,7 +3,6 @@ package com.dsi32.COVID19;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +18,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity{
-    TextView TV;
     TextView TV1;
     TextView TV2;
     TextView TV3;
@@ -88,12 +86,7 @@ public class MainActivity extends AppCompatActivity{
             startActivity(inte);
         });
 
-        findViewById(R.id.log_out).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                disconnect();
-            }
-        });
+        findViewById(R.id.log_out).setOnClickListener(view -> disconnect());
 
     }
 
